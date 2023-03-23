@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://13.214.161.151/eship/api/v1/',
+  apiUrl: 'http://54.179.25.176/eship/api/v1/',
 };
