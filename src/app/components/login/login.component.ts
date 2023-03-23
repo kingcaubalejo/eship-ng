@@ -45,16 +45,17 @@ export class LoginComponent implements OnInit {
         .subscribe({
           next: () => {
             Swal.fire('Hi', 'Login Successfully!', 'success');
-            this.router.navigate(['']);
+            this.router.navigate(['home']);
           },
           error: (error) => {
             console.error(error);
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
-              text: JSON.stringify(error.error),
+              text: JSON.stringify(error.error.error),
               footer: '<a href="">Why do I have this issue?</a>',
             });
+            // this.onClearForm();
           },
         });
     }
@@ -66,5 +67,9 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
+  }
+
+  onClearForm() {
+    this.registerForm.reset();
   }
 }
