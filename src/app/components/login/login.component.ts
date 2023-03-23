@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         .subscribe({
           next: () => {
             Swal.fire('Hi', 'Login Successfully!', 'success');
-            this.router.navigate(['home']);
+            this.router.navigate(['/home']);
           },
           error: (error) => {
             console.error(error);
